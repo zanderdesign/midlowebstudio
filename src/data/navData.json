@@ -19,6 +19,11 @@
     "children": []
   },
   {
+    "key": "FAQ",
+    "url": "/FAQ/",
+    "children": []     
+  },
+  {
     "key": "Blog",
     "url": "/blog/",
     "children": []     

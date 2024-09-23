@@ -102,7 +102,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
       </div>
     </nav>
     <div class="cs-contact-group">
-      <div class="cs-social">
+      <!-- <div class="cs-social">
         <a href="" class="cs-social-link">
           <img
             class="cs-social-icon"
@@ -125,15 +125,14 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
             decoding="async"
           />
         </a>
-      </div>
-      <a href="/contact" class="cs-button-solid cs-nav-button">Contact Us</a>
+      </div> -->
+      <a href="/contact" class="cs-button-solid cs-nav-button">Get Started</a>
       <!--Dark Mode toggle: remove component if you don't want to enable a dark mode toggle-->
-      <DarkModeToggle />
     </div>
-  </header>
+    <DarkModeToggle />
+  </div>
 
   <style lang="less">
-
     /*-- -------------------------- -->
   <---     Mobile Navigation      -->
   <--- -------------------------- -*/
@@ -471,10 +470,6 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
             color: var(--primary);
           }
         }
-
-        .cs-button-solid {
-          display: none;
-        }
       }
     }
 
@@ -483,6 +478,9 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
       #cs-navigation {
         .cs-contact-group {
           display: block;
+        }
+        .cs-button-solid {
+          display: none;
         }
       }
     }
@@ -763,7 +761,15 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
         }
       }
     }
-
+    @media only screen and (min-width: 1200px) {
+      #cs-navigation .cs-button-solid {
+        z-index: 1;
+        position: relative;
+        right: -1.25rem;
+        display: block;
+        line-height: 3rem;
+      }
+    }
     /* Dark Mode - Desktop */
     @media only screen and (min-width: 64rem) {
       body.dark-mode {
@@ -822,16 +828,15 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
           max-width 0.3s;
 
         .cs-container {
-          width: 100%;
-          max-width: (1440/16rem);
-          margin: auto;
-          /* prevents padding from affecting height and width */
-          box-sizing: border-box;
-          padding: 0 (24/16rem);
           display: flex;
           justify-content: space-between;
           align-items: center;
-          gap: (24/16rem);
+          margin: auto;
+          max-width: 90rem;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 1.5rem;
+          gap: 1.5rem;
         }
 
         .cs-toggle {
@@ -963,13 +968,16 @@ import DarkModeToggle from "@components/DarkModeToggle.astro";
         }
 
         .cs-li-link {
-          font-size: (16/16rem);
-          line-height: 1.5em;
-          text-decoration: none;
-          margin: 0;
-          color: var(--headerColor);
-          display: block;
           position: relative;
+          display: block;
+          margin: 0;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: var(--headerFont);
+          font-size: clamp(.9rem, 1vw, 1rem);
+          line-height: 1.5em;
+          font-weight: 600;
+          color: var(--headerColor);
           transition: color 0.3s;
 
           &:hover {

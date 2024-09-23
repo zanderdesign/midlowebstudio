@@ -1,0 +1,265 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section id="services-1176">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">What We Do</span>
+            <h2 class="cs-title">Never Worry About Your Website Again</h2>
+            <p class="cs-text">
+                At Midlo Web Studio, we specialize in small business web design
+                and development for clients anywhere. Every line of code is
+                written to ensure the best performance and to provide the best
+                Google search optimzation. This bring in more customers to your
+                site and more revenue to your business! We manage edits and
+                harbor long term relationships with our clients to have them
+                succeed over time.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <Icon name="phone" class="cs-icon" />
+                </picture>
+                <h3 class="cs-h3">Mobile Friendly</h3>
+                <p class="cs-item-text">
+                    We build your site with a mobile first design and will stay
+                    fully responsive across all size phones, tablets, and
+                    desktops. No wasted space and written as efficiently as
+                    possible for the best viewing experience.
+                </p>
+                <a href="" class="cs-link">
+                    Read More
+                    <img
+                        class="cs-arrow"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
+                        alt="icon"
+                        width="20"
+                        height="20"
+                        aria-hidden="true"
+                    />
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <Icon name="stopwatch" class="cs-icon" />
+                </picture>
+                <h3 class="cs-h3">Optimized Page Speed</h3>
+                <p class="cs-item-text">
+                    Websites that take longer than 3 seconds to load lose more
+                    than 50% of users. Our sites load in less than 1 second and
+                    ensures the best user experience and promotes your site SEO
+                    ranking.
+                </p>
+                <a href="" class="cs-link">
+                    Read More
+                    <img
+                        class="cs-arrow"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
+                        alt="icon"
+                        width="20"
+                        height="20"
+                        aria-hidden="true"
+                    />
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <Icon name="support" class="cs-icon" />
+                </picture>
+                <h3 class="cs-h3">24/7 Support</h3>
+                <p class="cs-item-text">
+                    Call or text anytime and you reach me - the owner and developer.
+                    We dont just give you a beautiful website, we provide
+                    invaluable business solutions to meet your digital needs.
+                </p>
+                <a href="" class="cs-link">
+                    Read More
+                    <img
+                        class="cs-arrow"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
+                        alt="icon"
+                        width="20"
+                        height="20"
+                        aria-hidden="true"
+                    />
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style lang="less">
+    /*-- -------------------------- -->
+<---         Services           -->
+<--- -------------------------- -*/
+    /* Mobile - 360px */
+    @media only screen and (min-width: 0rem) {
+        #services-1176 {
+            padding: var(--sectionPadding);
+        }
+        #services-1176 .cs-container {
+            max-width: 34.375rem;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+        #services-1176 .cs-title {
+            max-width: 20ch;
+        }
+        #services-1176 .cs-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+        }
+
+        #services-1176 .cs-card-group {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2.3vw, 1.25rem);
+        }
+        #services-1176 .cs-item {
+            list-style: none;
+            width: 100%;
+            margin: 0 auto;
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            padding: 1.5rem;
+            padding-bottom: 2rem;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            transition:
+                box-shadow 0.3s,
+                border-color 0.3s;
+            text-align: center;
+            grid-column: span 12;
+            grid-row: span 1;
+        }
+        #services-1176 .cs-item:hover .cs-h3,
+        #services-1176 .cs-item:hover .cs-link {
+            color: var(--primary);
+        }
+        #services-1176 .cs-item:hover .cs-arrow {
+            filter: initial;
+        }
+        #services-1176 .cs-picture {
+            width: 6.25rem;
+            height: auto;
+            margin: 0.5rem 0 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+        #services-1176 .cs-icon {
+            width: 4.5rem;
+            height: auto;
+        }
+        #services-1176 .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: bold;
+            margin: 0 0 0.75rem;
+            color: var(--headerColor);
+            transition: color 0.3s;
+            text-align: inherit;
+        }
+        #services-1176 .cs-item-text {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            max-width: 28.125rem;
+            margin: 0;
+            margin-bottom: 1.25rem;
+            padding: 0;
+            color: var(--bodyTextColor);
+        }
+        #services-1176 .cs-link {
+            font-size: 1rem;
+            line-height: 1.2em;
+            font-weight: 700;
+            margin-top: auto;
+            color: var(--headerColor);
+            text-decoration: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            transition: color 0.3s;
+            text-align: inherit;
+        }
+        #services-1176 .cs-link:hover .cs-arrow {
+            transform: translateX(0.25rem);
+        }
+        #services-1176 .cs-arrow {
+            width: 1.25rem;
+            height: auto;
+            display: block;
+            filter: grayscale(1) brightness(0);
+            transition:
+                filter 0.3s,
+                transform 0.3s;
+        }
+    }
+    /* Tablet - 768px */
+    @media only screen and (min-width: 48rem) {
+        #services-1176 .cs-container {
+            max-width: 80rem;
+        }
+        #services-1176 .cs-item {
+            grid-column: span 4;
+        }
+    }
+    /* Dark Mode */
+    @media only screen and (min-width: 0rem) {
+        body.dark-mode #services-1176 .cs-item {
+            background-color: var(--medium);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        body.dark-mode #services-1176 .cs-item:hover .cs-h3 {
+            color: var(--primary);
+        }
+        body.dark-mode #services-1176 .cs-topper {
+            color: var(--primary);
+        }
+        body.dark-mode #services-1176 .cs-title,
+        body.dark-mode #services-1176 .cs-text,
+        body.dark-mode #services-1176 .cs-h3,
+        body.dark-mode #services-1176 .cs-item-text,
+        body.dark-mode #services-1176 .cs-link {
+            color: var(--bodyTextColorWhite);
+        }
+        body.dark-mode #services-1176 .cs-text {
+            opacity: 0.8;
+        }
+        body.dark-mode #services-1176 .cs-arrow {
+            filter: grayscale(1) brightness(1000%);
+        }
+    }
+</style>
