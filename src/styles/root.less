@@ -251,17 +251,18 @@
   }
 
   #dark-mode-toggle {
-    width: (48/16rem);
-    height: (48/16rem);
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    border: none;
-    display: block;
-    order: 1;
-    position: relative;
+    order: 2;
     z-index: 1000;
+    position: relative;
+    display: block;
+    border: none;
+    margin: 0;
+    background: transparent;
+    height: 3rem;
+    width: 3rem;
     overflow: hidden;
+    padding: 0;
+    flex: none;
 
     img,
     svg {
@@ -295,11 +296,11 @@
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #dark-mode-toggle {
-    margin: 0;
     position: relative;
     top: auto;
-    right: auto;
+    right: -0.625rem;
     transform: none;
+    margin: 0;
 
     &:hover {
       cursor: pointer;

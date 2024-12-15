@@ -1,21 +1,19 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
-import CTA from "@components/CTA.astro";
 import Landing from "@components/Landing.astro";
+import aboutImage from "@assets/images/headshot.jpg" // The asset must be imported from src in order to be used in <Picture /> or <Image />
+import { Picture } from "astro:assets";
 import FAQ from "@components/FAQ.astro";
+import CTA from "@components/CTA.astro";
+
 ---
 
-<BaseLayout
-  title="About"
-  description="Meta description for the page"
->
+<BaseLayout title="About" description="Learn about Skin by Salena's commitment to personalized skincare. Discover our mission, values, and the team behind our beauty services.">
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="About Us"
-  />
+  <Landing title="About Us" />
 
   <!-- ============================================ -->
   <!--                 Side By Side                 -->
@@ -26,67 +24,45 @@ import FAQ from "@components/FAQ.astro";
       <!-- Left Image Section -->
       <div class="cs-left">
         <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/cabinets2-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/cabinets2.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/cabinets2.jpg"
-            alt="cabinets"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/construction-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/construction.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/construction.jpg"
-            alt="house"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
+          <Picture 
+          src={aboutImage}
+          formats={['avif', 'webp']} 
+          alt="A description of my image."
+          aria-hidden="true" 
+          decoding="async"
+          alt="Alex Headshot"
+          loading="eager"
+      /> 
         </picture>
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
-        <span class="cs-topper">About Us</span>
-        <h2 class="cs-title">About Company Title</h2>
+        <span class="cs-topper">Midlo Web Studio</span>
         <p class="cs-text">
-          In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-          officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-          et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-          nonatourean olei aptent taciti sociosqu ad litora torquent per.
+          Welcome to Skin By Salena! I’m thrilled to have you here and honored
+          that you’re entrusting me with your skincare journey. My passion for
+          skincare began with my own challenges—I battled severe cystic acne in
+          my early 20s, an experience that deeply shaped my understanding of
+          skin health. Working closely with an esthetician, I transformed my
+          skin and realized my calling to help others achieve the same results.
         </p>
         <p class="cs-text">
-          In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-          officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-          et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-          nonatourean olei aptent taciti sociosqu ad litora torquent per.
+          After gaining valuable experience at a facial spa for two years, I
+          felt inspired to create something of my own. In March 2021, I launched
+          Skin By Salena, a decision that has brought immense joy and
+          fulfillment into my life. Facials and skincare are my true passions,
+          and I’m dedicated to offering more than just products—I provide
+          solutions, education, and personalized plans tailored to your unique
+          needs.
         </p>
         <div class="cs-flex-group">
           <p class="cs-flex-p">
-            In consequat tincidunt turpis sit amet imperdiet. Praesent Classei
-            consequat tincidunt turpis sit amet imperdiet for mind.
+            Voted best facial in Fort Worth and DFW in 2023!! Come get facial
+            with me where you’ll get the glowy skin, results and a forever esty
+            bestie!
           </p>
-          <span class="cs-name">Justin Time</span>
-          <span class="cs-job">CEO-Founder</span>
+          <span class="cs-name">Salena Butts</span>
+          <span class="cs-job">Founder</span>
           <img
             class="cs-quote-icon"
             loading="lazy"
@@ -97,7 +73,6 @@ import FAQ from "@components/FAQ.astro";
             height="77"
           />
         </div>
-        <a href="/projects" class="cs-button-solid">Our Projects</a>
       </div>
     </div>
   </section>
@@ -138,14 +113,14 @@ import FAQ from "@components/FAQ.astro";
       }
 
       .cs-picture {
-        border-radius: (24/16em);
         display: block;
-        position: absolute;
-        /* clips img tag corners */
+        // /* clips img tag corners */
         overflow: hidden;
         img {
           width: 100%;
           height: 100%;
+          border-radius: (24/16em);
+          object-position: 50% 75%; /* Aligns the image to the top */
           /* makes image act like a background image */
           object-fit: cover;
           position: absolute;
@@ -157,19 +132,6 @@ import FAQ from "@components/FAQ.astro";
       .cs-picture1 {
         width: (522/16em);
         height: (581/16em);
-        top: 0;
-        left: 0;
-      }
-
-      .cs-picture2 {
-        width: (414/16em);
-        height: (400/16em);
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-        /* 6px - 12px */
-        border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-        right: 0;
-        bottom: 0;
       }
 
       .cs-right {

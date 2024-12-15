@@ -1,0 +1,305 @@
+---
+import { Image } from "astro:assets";
+import portfolioImage1 from "@assets/images/SkinBySalenaMobile.png";
+---
+
+<!-- ============================================ --><!--                  Services                    --><!-- ============================================ -->
+<section id="services-1626">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Portfolio</span>
+                <h2 class="cs-title">Work We Have Done Over the years</h2>
+            </div>
+            <p class="cs-text">
+                We have had the privelage of working with dedicated small
+                business owners and gained meaningful relationships along the
+                way. Regardless of your field, we’re ready to create a website
+                that is visually stunning, high-performing, and customized to
+                meet the unique needs of your business.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <Image src={portfolioImage1} alt="computer" />
+                    </picture>
+                    <h3 class="cs-h3">Skin By Salena</h3>
+                    <p class="cs-item-text">
+                        Skin By Salena is Fort Worth's top facial estetician and
+                        needed a site which handled her bookings, facial
+                        offerings, and even e-commerce integration.
+                    </p>
+                    <a href="https://skinbysalena.com" class="cs-button-solid"
+                        >Visit Site</a
+                    >
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <Image src={portfolioImage1} alt="computer" />
+                    </picture>
+                    <h3 class="cs-h3">Skin By Salena</h3>
+                    <p class="cs-item-text">
+                        Skin By Salena is Fort Worth's top facial estetician and
+                        needed a site which handled her bookings, facial
+                        offerings, and even e-commerce integration.
+                    </p>
+                    <a href="https://skinbysalena.com" class="cs-button-solid"
+                        >Visit Site</a
+                    >
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <style lang="less">
+        /*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+
+        /* Mobile - 360px */
+        @media only screen and (min-width: 0rem) {
+            #services-1626 {
+                padding: var(--sectionPadding);
+                background-color: #f7f7f7;
+
+                .cs-container {
+                    width: 100%;
+                    /* changes to 1280px at tablet */
+                    max-width: (550/16em);
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    /* 48px - 64px */
+                    gap: clamp(3rem, 6vw, 4rem);
+                }
+
+                .cs-content {
+                    /* set text align to left if content needs to be left aligned */
+                    text-align: left;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    /* centers content horizontally, set to flex-start to left align */
+                    align-items: flex-start;
+                }
+
+                .cs-title {
+                    max-width: 20ch;
+                }
+
+                .cs-text {
+                    max-width: (640/16rem);
+                    position: relative;
+                    z-index: 1;
+
+                    &:after {
+                        /* divider line */
+                        content: "";
+                        width: 100%;
+                        height: 1px;
+                        margin-top: (24/16rem);
+                        background: var(--primary);
+                        opacity: 1;
+                        display: block;
+                        position: relative;
+                    }
+                }
+
+                .cs-chevron {
+                    --chevronColor: var(--primary);
+
+                    width: (48/16rem);
+                    height: auto;
+                }
+
+                .cs-card-group {
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: repeat(10, 1fr);
+                    /* 16px - 20px */
+                    column-gap: clamp(12rem, 2.5vw, 1.25rem);
+                    /* 28px - 40px */
+                    row-gap: clamp(1.75rem, 2.5vw, 2.5rem);
+                }
+
+                .cs-item {
+                    list-style: none;
+                    width: 100%;
+                    display: flex;
+                    grid-column: span 3;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-left: auto; /* Added this line */
+                    margin-right: auto;
+
+                    &:hover {
+                        .cs-picture {
+                            // img {
+                            //     opacity: 0.5;
+                            //     transform: scale(1.08);
+                            // }
+                        }
+                    }
+                }
+
+                .cs-link {
+                    text-decoration: none;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .cs-picture {
+                    width: 100%;
+                    height: (240/16rem);
+                    margin-bottom: (24/16rem);
+                    overflow: hidden;
+                    display: block;
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        padding: 0 1.25rem;
+                        left: 50%;
+                        transform: translateX(
+                            -50%
+                        ); /* Centers the image horizontally */
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        transition:
+                            transform 0.6s,
+                            opacity 0.3s;
+                    }
+                }
+
+                .cs-h3 {
+                    font-size: (20/16rem);
+                    line-height: 1.2em;
+                    font-weight: 700;
+                    align-items: center;
+                    text-align: center;
+                    margin: 0 0 (12/16rem) 0;
+                    color: var(--headerColor);
+                }
+
+                .cs-item-text {
+                    width: 70ch;
+                    display: block;
+                    font-size: (16/16rem);
+                    line-height: 1.5em;
+                    text-align: left;
+                    margin: 0 0 (24/16rem) 0;
+                    color: var(--bodyTextColor);
+                }
+
+                .cs-fake-link {
+                    font-size: (16/16rem);
+                    line-height: 1.2em;
+                    font-weight: 700;
+                    margin: 0;
+                    margin-top: auto;
+                    color: var(--primary);
+                    display: inline-flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: (8/16rem);
+
+                    &:hover {
+                        .cs-icon {
+                            transform: translateX(0.5rem);
+                        }
+                    }
+                }
+
+                .cs-icon {
+                    width: (20/16rem);
+                    height: auto;
+                    display: block;
+                    transition: transform 0.3s;
+                }
+            }
+        }
+
+        /* Tablet - 768px */
+        @media only screen and (min-width: 48rem) {
+            #services-1626 {
+                .cs-container {
+                    max-width: (1280/16rem);
+                }
+
+                .cs-content {
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .cs-flex {
+                    text-align: left;
+                    width: 40vw;
+                    max-width: (640/16rem);
+                    flex: none;
+                }
+
+                .cs-title {
+                    margin: 0;
+                }
+
+                .cs-text {
+                    padding: (12/16rem) 0 (12/16rem) (24/16rem);
+
+                    &:after {
+                        width: 1px;
+                        height: 100%;
+                        margin: 0 (24/16rem) 0 0;
+                        order: -1;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+
+                .cs-item {
+                    grid-column: span 4;
+                }
+
+                .cs-picture {
+                    /* 240px - 420px */
+                    height: clamp(15rem, 33vw, 26.25rem);
+                }
+
+            }
+        }
+
+        /* Dark Mode */
+        @media only screen and (min-width: 0rem) {
+            body.dark-mode {
+                #services-1626 {
+                    background-color: rgba(0, 0, 0, 0.2);
+
+                    .cs-title,
+                    .cs-text,
+                    .cs-h3,
+                    .cs-item-text {
+                        color: var(--bodyTextColorWhite);
+                    }
+
+                    .cs-text,
+                    .cs-item-text {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    </style>
+</section>

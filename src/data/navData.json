@@ -10,28 +10,12 @@
     "children": []
   },
   {
-    "key": "Services",
-    "url": "/services/"
-  },
-  {
-    "key": "Portfolio",
-    "url": "/portfolio/",
-    "children": []
-  },
-  {
-    "key": "FAQ",
-    "url": "/FAQ/",
-    "children": []     
-  },
-  {
-    "key": "Blog",
-    "url": "/blog/",
-    "children": []     
+    "key": "Pricing",
+    "url": "/pricing/"
   },
   {
     "key": "Contact",
     "url": "/contact/",
-    "children": []     
+    "children": []
   }
-
 ]

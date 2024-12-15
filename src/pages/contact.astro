@@ -2,20 +2,16 @@
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import client from "@data/client.json";
 import Landing from "@components/Landing.astro";
-
+import laptopImage from "@assets/images/contact-laptop.jpg";
+import { Image } from "astro:assets";
 ---
 
-<BaseLayout
-  title="Contact"
-  description="Meta description for the page"
->
+<BaseLayout title="Contact" description="Meta description for the page">
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="Contact"
-  />
+  <Landing title="Contact" />
 
   <!-- ============================================ -->
   <!--                Contact Form                  -->
@@ -107,19 +103,7 @@ import Landing from "@components/Landing.astro";
 
         <!-- Background Image-->
         <picture class="cs-bg-picture">
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/skyscraper.jpg"
-            alt="building"
-            loading="lazy"
-            width="2500"
-            height="1667"
-          />
+          <Image src={laptopImage} alt="computer" />
         </picture>
       </div>
     </div>

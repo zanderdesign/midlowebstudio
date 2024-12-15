@@ -1,106 +1,189 @@
 ---
-import Picture from "astro/components/Picture.astro"
-import landingImage from "@assets/images/landing.jpg" // The asset must be imported from src in order to be used in <Picture /> or <Image />
-const { title } = Astro.props
+import Picture from "astro/components/Picture.astro";
+import landingImage from "@assets/images/landing.jpg"; // The asset must be imported from src in order to be used in <Picture /> or <Image />
+const { title } = Astro.props;
 ---
 
-<section id="int-hero">
-<h1 id="home-h">{title}</h1>
-
-<!-- standard <picture> attributes are supported. Set loading to lazy for assets below the fold -->
-<Picture 
-    src={landingImage}
-    formats={['avif', 'webp']} 
-    alt="A description of my image."
-    aria-hidden="true" 
-    decoding="async"
-    alt="kitchen cabinets"
-    loading="eager"
-/>
-
-</section>
+<!-- ============================================ --><!--                   Banner                     --><!-- ============================================ -->
+<div id="banner-1519">
+    <div class="cs-container">
+        <span class="cs-int-title">{title}</span>
+    </div>
+    <!--Background Image-->
+    <svg
+        class="cs-mask"
+        xmlns="http://www.w3.org/2000/svg"
+        width="1920"
+        height="136"
+        viewBox="0 0 1920 136"
+        fill="none"
+    >
+        <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M1920 136V0C1803.21 45.3334 1445.52 136 951 136C456.485 136 111.116 45.3334 0 0V136H951H1920Z"
+            fill="var(--maskBG)"></path>
+    </svg>
+</div>
 
 <style lang="less">
-    
-/*-- -------------------------- -->
-<---   Interior Page Header     -->
-<--- -------------------------- -*/
+    /*-- -------------------------- -->
+    <---          Banner            -->
+    <--- -------------------------- -*/
 
-/* Mobile */
-@media only screen and (min-width: 0em) {
-    #int-hero {
-        min-height: 30vh;
-        padding-top: (50/16rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 1;
+    /* Mobile - 360px */
+    @media only screen and (min-width: 0rem) {
+        #banner-1519 {
+            z-index: 1;
+            position: relative;
+            background-color: var(--primary);
+            overflow: hidden;
+            padding: var(--sectionPadding);
+            padding-top: clamp(11.875rem, 25vw, 16.75rem);
+            padding-bottom: clamp(3rem, 7vw, 6.25rem);
 
-        &:before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background: #000;
-            opacity: 0.7;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+            .cs-container {
+                text-align: center;
+                width: 100%;
+                max-width: (1280/16rem);
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                /* 8px - 12px */
+                gap: clamp(0.5rem, 1vw, 0.75rem);
+            }
 
-        picture {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -2;
+            .cs-int-title {
+                /* 39px - 61px */
+                font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+                font-weight: 900;
+                line-height: 1.2em;
+                text-align: inherit;
+                text-transform: uppercase;
+                margin: 0;
+                color: #ffffff;
+                position: relative;
+            }
 
-            img {
+            .cs-breadcrumbs {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .cs-link {
+                font-size: (16/16rem);
+                line-height: 1.2em;
+                text-decoration: none;
+                color: var(--bodyTextColor);
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:last-of-type {
+                    /* remove the chevron on the last list item */
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                &:after {
+                    /* chevron */
+                    content: "";
+                    width: (7/16rem);
+                    height: (12/16rem);
+                    margin: 0 (16/16rem);
+                    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/grey-chevron.svg");
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    display: block;
+                }
+
+                &.cs-active {
+                    color: var(--primary);
+                }
+            }
+
+            .cs-background {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                display: block;
                 position: absolute;
                 top: 0;
                 left: 0;
+                z-index: -1;
+
+                &:before {
+                    /* gradient overlay */
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background: #fff3ec;
+                    opacity: 0.8;
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    /* Makes img tag act as a background image */
+                    object-fit: cover;
+                }
+            }
+
+            .cs-mask {
+                --maskBG: #ffffff;
+
+                width: 100%;
+                height: auto;
+                display: block;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                z-index: 100;
             }
         }
+    }
 
-        h1 {
-            font-size: var(--headerFontSize);
-            text-align: center;
-            width: 96%;
-            max-width: (500/16rem);
-            margin: 0 auto;
-            margin-top: (70/16rem);
-            margin-bottom: (30/16rem);
-            color: #fff;
-            position: relative;
-        }
-
-        p {
-            text-align: center;
-            width: 96%;
-            max-width: (400/16rem);
-            margin: auto;
-            margin-bottom: (30/16rem);
-            color: #fff;
-            display: block;
+    /* Tablet - 768px */
+    @media only screen and (min-width: 48rem) {
+        #banner-1519 {
+            .cs-background {
+                &:before {
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(
+                        90deg,
+                        rgba(255, 243, 236, 0.9) 23.05%,
+                        rgba(255, 243, 236, 0) 80.08%
+                    );
+                    opacity: 1;
+                }
+            }
         }
     }
-}
 
-/* Small Desktop */
-@media only screen and (min-width: 64em) {
-    #int-hero {
-        height: auto;
-        min-height: (300/16rem);
-        padding-top: (180/16rem);
-        background-attachment: fixed;
-        padding-block-end: (100/16rem);
+    /* Dark Mode */
+    @media only screen and (min-width: 0rem) {
+        body.dark-mode {
+            #banner-1519 {
+                .cs-mask {
+                    --maskBG: var(--dark);
+                }
+            }
+        }
     }
-}
 </style>

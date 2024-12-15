@@ -2,8 +2,14 @@
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import WhatWeDo from "@components/WhatWeDo.astro";
-import mobileImage from "@assets/images/hero.jpg";
-
+import laptopImage from "@assets/images/hero.jpg";
+import FAQ from "@components/FAQ.astro";
+import SideBySide from "@components/SideBySide.astro";
+import Portfolio from "@components/Portfolio.astro";
+import Pricing from "@components/Pricing.astro";
+import Step from "@components/Step.astro";
+import CTA from "@components/CTA.astro";
+import PortfolioSBS from "@components/PortfolioSBS.astro";
 ---
 
 <BaseLayout
@@ -15,7 +21,7 @@ import mobileImage from "@assets/images/hero.jpg";
   <!-- ============================================ -->
 
   <!-- ============================================ -->
-  <!--                  Services                    -->
+  <!--                  Services               -->
   <!-- ============================================ -->
 
   <section id="hero-1349">
@@ -35,10 +41,16 @@ import mobileImage from "@assets/images/hero.jpg";
     <div class="cs-bubbles cs-bubbles2" aria-hidden="true"></div>
     <!-- Background Image, background image added in the css at 1600px for parallax effect -->
     <picture class="cs-background">
-      <Image src={mobileImage} alt="computer" />
+      <Image src={laptopImage} alt="computer" />
     </picture>
   </section>
   <WhatWeDo />
+  <SideBySide />
+  <!-- <Portfolio /> -->
+  <PortfolioSBS />
+  <Step />
+  <Pricing />
+  <CTA />
 
   <style lang="less">
     /*-- -------------------------- -->
