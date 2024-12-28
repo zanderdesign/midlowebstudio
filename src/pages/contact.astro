@@ -6,7 +6,7 @@ import laptopImage from "@assets/images/contact-laptop.jpg";
 import { Image } from "astro:assets";
 ---
 
-<BaseLayout title="Contact" description="Meta description for the page">
+<BaseLayout title="Contact" description="Contact page for Midlo Web Studio">
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
@@ -24,9 +24,7 @@ import { Image } from "astro:assets";
           <span class="cs-topper">Contact</span>
           <h2 class="cs-title">Get in Touch</h2>
           <p class="cs-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
-            elementum ullamcorper ipsum porttitor aliquam. Id magna urna
-            ultrices odio pulvinar. Sed ut.
+            Take the first step towards a customized web design solution. To request a quote, fill out the form or contact us using one of the methods below.
           </p>
         </div>
         <label>
@@ -88,16 +86,10 @@ import { Image } from "astro:assets";
           >{client.phoneFormatted}</a
         >
         <!--Address-->
-        <span class="cs-header">Address</span>
-        <a class="cs-link" href={client.address.mapLink}>
-          {client.address.lineOne},
-          <br />
-          {client.address.lineTwo},
-          <br />
+        <span class="cs-header">Location</span>
+        <a class="cs-link">
           <span class="cs-block">
-            {client.address.city}
-            {client.address.state}
-            {client.address.zip}
+            Midlothian, TX, USA
           </span>
         </a>
 
