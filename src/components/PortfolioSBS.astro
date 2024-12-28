@@ -35,11 +35,14 @@ import portfolioImage1 from "@assets/images/Speed.png";
         </div>
         <div class="cs-content">
             <span class="cs-topper">Unmatched Performance</span>
-            <h2 class="cs-title">
-                Beautiful and fast load times
-            </h2>
+            <h2 class="cs-title">Beautiful and fast load times</h2>
             <p class="cs-text">
-                Our websites are custom-coded to minimize bloat and maximize performance, ensuring top scores on Google PageSpeed Insights. This optimization is critical for SEO, helping your business rank higher in search results and providing your customers with an exceptional browsing experience.            </p>
+                Our websites are custom-coded to minimize bloat and maximize
+                performance, ensuring top scores on Google PageSpeed Insights.
+                This optimization is critical for SEO, helping your business
+                rank higher in search results and providing your customers with
+                an exceptional browsing experience.
+            </p>
             <!-- <a href="https://skinbysalena.com" class="cs-button-solid"
                 >Visit Site
             </a> -->
@@ -129,22 +132,25 @@ import portfolioImage1 from "@assets/images/Speed.png";
                 order: 2;
             }
             #sbsr-1592 .cs-picture {
-                position: absolute;
+                position: absolute; /* Change from absolute to relative for better alignment */
             }
             #sbsr-1592 .cs-picture img {
                 width: auto;
                 height: 100%;
                 object-fit: cover;
                 position: absolute;
-                top: 0;
-                left: 0;
+                transform: translate(
+                    -50%,
+                    -50%
+                ); /* Center the image by adjusting its position */
             }
             #sbsr-1592 .cs-picture1 {
                 /* the percentage heights allow them to be responsive to the height of the parent cs-image-group. On desktop, when the felxbox is set to aling-items: stretch, the cs-image group will stretch to fill the height of the parent container. So when you add more content to the cs-content group and make it taller, the cs-image group will get taller with it and every image will stretch with the parent, making this entire group responsive to the changing amounts of content next to it */
-                width: 50rem;
-                height: 60.617834%;
-                top: 0;
-                right: -10;
+                width: 100%;
+                height: 100%;
+                top: 50%; /* Start from the vertical center */
+                left: 50%; /* Start from the horizontal center */
+                // margin: 0 auto 0 0;
                 z-index: -1;
             }
             #sbsr-1592 .cs-picture2 {
