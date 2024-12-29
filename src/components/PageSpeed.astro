@@ -1,0 +1,317 @@
+---
+import { Image } from "astro:assets";
+import portfolioImage1 from "@assets/images/Speed.png";
+---
+
+<!-- ============================================ --><!--            Side By Side Reverse              --><!-- ============================================ --><!-- ============================================ --><!--              Side By Side Reverse            --><!-- ============================================ --><!-- ============================================ --><!--                Side By Side                  --><!-- ============================================ -->
+<section id="sbs-521">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Performance</span>
+            <h2 class="cs-title">
+                We build better sites that performe
+            </h2>
+            <p class="cs-text">
+                Our websites are custom-coded to minimize bloat and maximize performance, ensuring top scores on <a href="https://developers.google.com/speed/docs/insights/v5/about">Google Page Speed Insights.</a>
+                </a> This optimization is crucial for search engine optimization (SEO), helping your business rank higher in search results and providing your customers with an exceptional browsing experience.</p>
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <img
+                        class="cs-icon"
+                        aria-hidden="true"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/sheild.svg"
+                        loading="lazy"
+                        decoding="async"
+                        alt="icon"
+                        width="40"
+                        height="40"
+                    />
+                    Lorem Ipsum Dolor Sit Amet Consectectur
+                </li>
+                <li class="cs-li">
+                    <img
+                        class="cs-icon"
+                        aria-hidden="true"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/pencil.svg"
+                        loading="lazy"
+                        decoding="async"
+                        alt="icon"
+                        width="40"
+                        height="40"
+                    />
+                    Lorem Ipsum Dolor Sit Amet Consectectur
+                </li>
+                <li class="cs-li">
+                    <img
+                        class="cs-icon"
+                        aria-hidden="true"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/hat.svg"
+                        loading="lazy"
+                        decoding="async"
+                        alt="icon"
+                        width="40"
+                        height="40"
+                    />
+                    Lorem Ipsum Dolor Sit Amet Consectectur
+                </li>
+            </ul>
+            <!-- <a href="" class="cs-button-solid">More About Us</a> -->
+        </div>
+        <!--Image Group-->
+        <div class="cs-image-group">
+            <ul class="cs-stat-group">
+                <li class="cs-stat">
+                    <span class="cs-number">95+</span>
+                    <span class="cs-desc"
+                        >Google Speed Performance</span
+                    >
+                </li>
+                <li class="cs-stat">
+                    <span class="cs-number">100%</span>
+                    <span class="cs-desc"
+                        >Customer Experience Satisfaction</span
+                    >
+                </li>
+            </ul>
+            <!--Picture-->
+            <picture class="cs-picture">
+                <Image src={portfolioImage1} alt="speed" />
+            </picture>
+        </div>
+    </div>
+</section>
+
+<style lang="less">
+    /*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+    /* Mobile - 360px */
+    @media only screen and (min-width: 0rem) {
+        #sbs-521 {
+            padding: var(--sectionPadding);
+            background-color: #e8e8e8;
+
+
+
+            .cs-container {
+                width: 100%;
+                /* changes to 1280px at tablet */
+                max-width: (550/16rem);
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* 48px - 60px */
+                gap: clamp(3rem, 10vw, 3.75rem);
+                
+            }
+
+            .cs-content {
+                /* set text align to left if content needs to be left aligned */
+                text-align: left;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                /* centers content horizontally, set to flex-start to left align */
+                align-items: flex-start;
+            }
+
+            .cs-text {
+                margin-bottom: (16/16rem);
+                &:last-of-type {
+                    margin-bottom: (32/16rem);
+                }
+            }
+
+            .cs-ul {
+                width: 80%;
+                /* 32px - 36px */
+                margin: 0 0 clamp(2rem, 4vw, 2.25rem) 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                /* 24px - 32px */
+                row-gap: clamp(1.5rem, 4vw, 2rem);
+            }
+
+            .cs-li {
+                /* 14px - 16px */
+                font-size: clamp(0.875rem, 1.5vw, 1rem);
+                list-style: none;
+                line-height: 1.5em;
+                font-weight: 700;
+                margin: 0;
+                color: var(--headerColor);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: (32/16rem);
+            }
+
+            .cs-button-solid {
+                font-size: (16/16rem);
+                /* 46px - 56px */
+                line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+                text-decoration: none;
+                font-weight: 700;
+                text-align: center;
+                margin: 0;
+                color: #fff;
+                min-width: (150/16rem);
+                padding: 0 (24/16rem);
+                background-color: var(--primary);
+                border-radius: (4/16rem);
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                /* prevents padding from adding to the width */
+                box-sizing: border-box;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 0%;
+                    background: #000;
+                    opacity: 1;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    border-radius: (4/16rem);
+                    transition: width 0.3s;
+                }
+
+                &:hover {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .cs-image-group {
+                width: 100%;
+                max-width: (630/16rem);
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                /* 40px - 48px */
+                row-gap: clamp(2.5rem, 6vw, 3rem);
+                /* sends it to the top in the first position */
+                order: -1;
+            }
+
+            .cs-stat-group {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: (80/16rem);
+            }
+
+            .cs-stat {
+                list-style: none;
+                max-width: (230/16rem);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: (8/16rem);
+            }
+
+            .cs-number {
+                /* 39px - 61px */
+                font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+                line-height: 1.2em;
+                font-weight: 900;
+                color: var(--headerColor);
+            }
+
+            .cs-desc {
+                font-size: clamp(0.875rem, 1rem, 1.25rem);
+                line-height: 1.5em;
+                font-weight: 400;
+                margin: 0;
+                color: var(--bodyTextColor);
+            }
+
+            .cs-picture {
+                width: 100%;
+                /* 244px - 339px, changes clamp at tablet */
+                height: clamp(14rem, 62vw, 21.1875rem);
+                display: block;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    /* Tablet - 768px */
+    @media only screen and (min-width: 48rem) {
+        #sbs-521 {
+            .cs-container {
+                max-width: (1280/16rem);
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .cs-content {
+                width: 71%;
+                max-width: (540/16rem);
+            }
+
+            .cs-image-group {
+                width: 68%;
+            }
+
+            .cs-stat-group {
+                justify-content: flex-start;
+            }
+
+            .cs-picture {
+                /* 340px - 461px */
+                height: clamp(21.25rem, 35vw, 28.8125rem);
+            }
+        }
+    }
+
+    /* Dark Mode */
+    @media only screen and (min-width: 0rem) {
+        body.dark-mode {
+            #sbs-521 {
+                background-color: var(--dark);
+                .cs-title,
+                .cs-text,
+                .cs-li,
+                .cs-desc {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-number,
+                .cs-topper {
+                    color: var(--secondary);
+                }
+
+                .cs-button-solid {
+                    background-color: var(--secondary);
+                    color: #1a1a1a;
+
+                    &:before {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+</style>
